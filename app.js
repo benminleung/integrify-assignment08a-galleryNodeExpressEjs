@@ -5,6 +5,9 @@ const bodyParser = require('body-parser')
 const os = require('os');
 
 const data = require('./src/photosInfo.json');
+
+const port = process.env.PORT || 8080;
+
 data.forEach(profile => {
     profile.id = createId(profile);
 })
