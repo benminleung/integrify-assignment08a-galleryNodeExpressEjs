@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/body.css">
+</head>
+<body>
+    <div class='container'>
+        <label class='btn' onclick='location.href = "<%= nav.addStudent %>"'>Add new student</label>
+        <label class='btn' onclick='location.href = "<%= nav.api %>"'>API</label>
+        <div>
+            <h1>Integrify Student Directory</h1>
+            <h4>Powered by EJS</h4>
+        </div>
+        <div class='sec-detail' id='sec-detail' style='display: none'>
+            <div class='sec-detailContainer' id='sec-detailContainer'>
+                <button class='closeButton' onclick="toggleDetail()">&#128473;</button>
+                <img class='detailPhoto' id='detailPhoto' onerror='this.src="/default-user-image.jpg"' alt='student photo'>
+                <div class='detailInfo'>
+                    <h3 id='detailName'></h3>
+                    <h4 id='detailTitle'></h4>
+                    <label id='detailInfoButton' class='btn'>More Info</label>
+                    <label id='getJson' class='btn'>Get JSON</label>
+                </div>
+            </div>
+        </div>
+        <section class='sec-body'>
+            
+            <ul class='photoGrid' id='photoGrid'>
+                <% data.forEach((student) => {%>
+                    <% const studentDetails = student.firstName + ', ' + student.lastName + ', ' + student.src %>
+                    <li onclick='toggleDetail("<%= student.firstName %>", "<%= student.lastName %>", "<%= student.src %>", "<%= student.title %>", "<%= student.id %>")'>
+                        <p><%= student.firstName + " " + student.lastName %></p>
+                        <img class='studentImg' src="<%= nav.images + student.src %>" onerror='this.src="<%=nav.defaultImg%>"' alt='student photo'>
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        function toggleDetail(firstName= "", lastName= "", imgSrc= "", title= "", id= ""){
+            document.getElementById("detailPhoto").src = <%= nav.images %> + imgSrc;
+            document.getElementById("detailName").innerText = firstName + ' ' + lastName;
+            document.getElementById("detailTitle").innerText = title;
+
+            document.getElementById("detailInfoButton").onclick = ()=> {       
+                location.href = '<%= nav.student %>' + id;
+            }
+
+            document.getElementById("getJson").onclick = () => {
+                location.href = <%= nav.api %> + id;
+            }
+
+            const style = document.getElementById("sec-detail").style
+            style.display === 'none'
+            ? style.display = 'block'
+            : style.display = 'none'
+        }
+    </script>
+</body>
+</html>

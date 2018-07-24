@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/profile.css">
+    <link rel="stylesheet" href="/body.css">
+</head>
+<body>
+    <div class='container'>
+        <section class='sec-profile'>
+            <div class='sec-detailContainer' id='sec-detailContainer'>
+                <div class='imgQuote'>
+                    <img src='<%= nav.images + student.src %>' onerror='this.src="<%= nav.defaultImg %>"' alt='student photo'>
+                    <div>
+                        <h1><%= student.firstName %></h1>
+                        <h3><%= student.lastName %></h3>
+                    </div>
+                    <div>
+                        <h4><%= student.title %></h4>
+                        |
+                        <% student.skills.forEach(skill => {%>
+                            <%= skill %> |
+                        <%})%>
+                    </div>
+                    <div class='quote'>
+                        <h2 class='quotationMarkOpen'>&#10077;</h2>
+                        <h2 class='quoteText'><%= student.favoriteQuote %></h2>
+                        <h2 class='quotationMarkClose'>&#10080;</h2>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label class='btn' onclick='location.href = "/api/<%= student.id %>"'>Get JSON</label>
+            </div>
+            <div class='infoContainer' >
+                <div>
+                    <h4><%=formTemp.whySofterDeveloper%></h4>
+                    <p>&#8220;<%= student.whySofterDeveloper %>&#8221;</p>
+                </div>
+                <div>
+                    <h4><%=formTemp.longTermVision%></h4>
+                    <p>&#8220;<%= student.longTermVision %>&#8221;</p>
+                </div>
+                <div>
+                    <h4><%=formTemp.motivatesMe%></h4>
+                    <p>&#8220;<%= student.motivatesMe %>&#8221;</p>
+                </div>
+                <div>
+                    <h4><%=formTemp.favoriteQuote%></h4>
+                    <p>&#8220;<%= student.favoriteQuote %>&#8221;</p>
+                </div>
+                <div>
+                    <h4><%=formTemp.joinedOn%></h4>
+                    <p>&#8220;<%= student.joinedOn %>&#8221;</p>
+                </div>
+                
+                
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+<!-- firstName: "Rasbin",
+    lastName: "",
+    title: "Junior Developer",
+    nationality: "",
+    src: "rasbin.jpg",
+    alt: "Rasbin",
+    skills: [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "JavaScript",
+      "JQuery",
+      "React", 
+      "PHP",
+      "MySQL"
+    ],
+    whySofterDeveloper: "Limitless opportunities of creation",
+    longTermVision: "IT Service Manager",
+    motivatesMe: "Books",
+    favoriteQuote: "Everything is possible",
+    joinedOn: "01-12-2017" -->

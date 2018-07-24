@@ -1,0 +1,51 @@
+img {
+    height: 20em;
+    border-radius: 100em;
+}
+
+.sec-profile {
+    margin: 0 auto;
+    max-width: 70em;
+}
+    .sec-profile > div{
+    }
+
+.sec-detailContainer{
+    padding: 3em;
+}
+
+.imgQuote {
+    display: grid;
+    grid-template: 0fr 0fr 1fr / 0fr 1fr;
+    grid-gap: 1em 1em;
+    align-items: center;
+}
+    .imgQuote img {
+        grid-row: 1 / -1;
+    }
+
+    .quote {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 0.5fr 5fr 0.5fr;
+    }
+        .quoteText {
+            text-align: center;        
+        }
+        .quotationMarkOpen {
+            font-size: 5em;
+            text-align: center;
+            line-height: 0.5em;
+        }
+        .quotationMarkClose {
+            font-size: 5em;
+            line-height: 0.5em;
+            align-self: end;
+        }
+        
+.infoContainer {
+    background: cornsilk;
+}
+    .infoContainer > *{
+        margin: 1em;
+    }

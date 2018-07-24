@@ -1,0 +1,53 @@
+@import url ('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
+@import url ('https://fonts.googleapis.com/css?family=Eczar');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.container > * > *{
+    margin: 0 2em;
+}
+
+h1, h2, h3, h4, p , div{
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+h2 {
+    font-weight: 100;
+    font-family: 'Eczar', serif;
+    font-size: 2em;
+    /* text-align: center; */
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+section {
+    margin: 2em 0;
+}
+
+.btn {
+    width: 3em;
+    color: rgba(0, 0, 0, 0.612);
+    background: lightgray;
+    border-radius: 5px;
+    line-height: 3em;
+    padding: 1em;
+}
+    .btn:hover{
+        background:rgb(176, 176, 176);
+    }

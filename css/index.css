@@ -1,0 +1,63 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    text-align: center;
+}
+
+.photoGrid {
+    display: grid;
+    grid-template:
+        repeat(auto-fit, minmax(12em, 1fr)) /
+        repeat(auto-fill, minmax(12em, 1fr));
+    justify-items: center;
+}
+
+.studentImg {
+    height: 10em;
+}
+.sec-body {
+}
+
+.sec-detail {
+    padding: 10vh 10vw;
+    position: fixed;
+    background: #000000cc;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* top: 10vh;
+    bottom: 10vh;
+    left: 10vw;
+    right: 10vw; */
+}
+    .sec-detailContainer {
+        display: grid;
+        grid-template:
+            '. . closeButton' 0fr
+            'detailPhoto detailInfo .'
+            / minmax(20em, 1fr) minmax(20em, 1fr) 0fr;
+        grid-gap: 1em;
+        max-width: 
+        /* align-items: stretch; */
+    }
+        .closeButton{
+            grid-area: closeButton;
+        }
+        .detailPhoto {
+            grid-area: detailPhoto;
+            box-sizing: content-box;
+            width: 100%;
+            height: auto;
+        }
+        .detailInfo {
+            grid-area: detailInfo;
+            color: white;
+        }
+            .detailInfo > * {
+                margin-bottom: 1em;
+            }
