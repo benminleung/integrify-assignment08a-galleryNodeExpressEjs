@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 
 const os = require('os');
 
-const data = require('./src/photosInfo').photosInfo;
+const data = require('./src/photosInfo.json');
 data.forEach(profile => {
     profile.id = createId(profile);
 })
