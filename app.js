@@ -125,6 +125,6 @@ server.post(nav.addStudent, (req,res) => {
     res.send('New student added.')
 })
 
-server.listen(3000, ()=>{
-    console.log(`Server is running on 3000 at ip:${ipAddress}`);
+server.listen(8080, ()=>{
+    console.log(`Server is running on 8080 at ip:${ipAddress}`);
 });
