@@ -44,7 +44,7 @@
 
     <script>
         function toggleDetail(firstName= "", lastName= "", imgSrc= "", title= "", id= ""){
-            document.getElementById("detailPhoto").src = <%= nav.images %> + imgSrc + ".jpg";
+            document.getElementById("detailPhoto").src = <%= nav.images %> + imgSrc;
             document.getElementById("detailName").innerText = firstName + ' ' + lastName;
             document.getElementById("detailTitle").innerText = title;
 
