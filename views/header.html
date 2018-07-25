@@ -1,8 +1,12 @@
-<section>
-    <div>
-        <h1>Header</h1>
-        <ul>
-            <li><a href="/">Home</a></li>
-        </ul>
-    </div>
-</section>
+<header class='header'>
+    <img src="integrifyLogo.svg" alt="integrifyLogo.svg" class='logo'>
+    <h1>Integrify Student Directory</h1>
+    <h4>Powered by EJS</h4>
+</header>
+<nav class='navBar'>
+    <ul>
+        <li><label class='btn' onclick='location.href = "<%= nav.home %>"'>Home</label></li>
+        <li><label class='btn' onclick='location.href = "<%= nav.addStudent %>"'>Add New Student</label></li>
+        <li><label class='btn' onclick='location.href = "<%= nav.api %>"'>API</label></li>
+    </ul>
+</nav>

@@ -12,7 +12,7 @@ li {
     display: grid;
     grid-template:
         repeat(auto-fit, minmax(12em, 1fr)) /
-        repeat(auto-fill, minmax(12em, 1fr));
+        repeat(auto-fill, minmax(10em, auto));
     justify-items: center;
 }
 
@@ -36,18 +36,26 @@ li {
     right: 10vw; */
 }
     .sec-detailContainer {
+        margin: 20vh auto;
         display: grid;
+        color: white;
         grid-template:
-            '. . closeButton' 0fr
-            'detailPhoto detailInfo .'
+            'detailPhoto . closeButton' 0fr
+            'detailPhoto detailInfo detailInfo' 1fr
             / minmax(20em, 1fr) minmax(20em, 1fr) 0fr;
-        grid-gap: 1em;
-        max-width: 
+        grid-gap: 1vw;
         /* align-items: stretch; */
+        /* background: rgba(255, 255, 255, 0.673); */
     }
         .closeButton{
             grid-area: closeButton;
+            line-height: 1em;
+            opacity: .5;
+            cursor: pointer;
         }
+            .closeButton:hover {
+                opacity: 1;
+            }
         .detailPhoto {
             grid-area: detailPhoto;
             box-sizing: content-box;
@@ -56,7 +64,6 @@ li {
         }
         .detailInfo {
             grid-area: detailInfo;
-            color: white;
         }
             .detailInfo > * {
                 margin-bottom: 1em;

@@ -7,8 +7,12 @@ body{
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
+.container {
+    background: rgba(255, 255, 255, 0.571);
+}
 .container > * > *{
-    margin: 0 2em;
+    margin-left: 2vw;
+    margin-right: 2vw;
 }
 
 h1, h2, h3, h4, p , div{
@@ -37,7 +41,7 @@ h3 {
 }
 
 section {
-    margin: 2em 0;
+    /* margin: 2em 0; */
 }
 
 .btn {
@@ -50,4 +54,30 @@ section {
 }
     .btn:hover{
         background:rgb(176, 176, 176);
+    }
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 20vw;
+    background: transparent;
+}
+
+.header {
+    text-align: center;
+    background: linear-gradient(90deg, rgb(81, 95, 189) 0%, rgb(255, 70, 118) 52%, rgb(253, 223, 70) 100%);
+    padding: 6vh 0 3vh;
+}
+    .navBar{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: sticky;
+        top: 0;
+        background: white; 
+        padding: 1em;
+    }
+    .navBar li {
+        display: inline-block;
     }
