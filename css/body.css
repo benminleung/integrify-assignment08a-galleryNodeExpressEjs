@@ -11,8 +11,8 @@ body{
     background: rgba(255, 255, 255, 0.571);
 }
 .container > * > *{
-    margin-left: 2vw;
-    margin-right: 2vw;
+    /* margin-left: 2vw;
+    margin-right: 2vw; */
 }
 
 h1, h2, h3, h4, p , div{
@@ -40,17 +40,23 @@ h3 {
     text-transform: uppercase;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 section {
     /* margin: 2em 0; */
 }
 
 .btn {
-    width: 3em;
+    /* width: auto; */
     color: rgba(0, 0, 0, 0.612);
     background: lightgray;
     border-radius: 5px;
     line-height: 3em;
-    padding: 1em;
+    padding: 0 1em;
 }
     .btn:hover{
         background:rgb(176, 176, 176);
@@ -59,25 +65,43 @@ section {
 .logo {
     display: block;
     margin: 0 auto;
-    width: 20vw;
+    width: 20rem;
+    max-width: 80vw;
     background: transparent;
 }
 
 .header {
     text-align: center;
     background: linear-gradient(90deg, rgb(81, 95, 189) 0%, rgb(255, 70, 118) 52%, rgb(253, 223, 70) 100%);
-    padding: 6vh 3vh;
+    padding: 3vh 3vh;
+}
+@media screen and (max-width: 700px){
+    .header{
+        font-size: 50%;
+    }
 }
     .navBar{
         text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
         position: sticky;
         top: 0;
         background: white; 
         padding: 1em;
     }
-    .navBar li {
-        display: inline-block;
+    .navBar ul {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: center;	
+        grid-gap: 1em;
+    }
+    @media screen and (max-width: 700px){
+        /* .navBar ul {
+            grid-auto-flow: row;
+            justify-content: stretch;	
+            grid-gap: 0.2em;
+            margin: 0 2vw;
+        } */
+    }
+    .navBar li label{
+        display: block;
+        /* width: max-content; */
     }

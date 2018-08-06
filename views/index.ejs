@@ -18,7 +18,7 @@
             <div class='sec-detailContainer' id='sec-detailContainer' >
                 <h3 class='closeButton' onclick="toggleDetail()">&#128473;</h3>
                 <img class='detailPhoto' id='detailPhoto' onerror='this.src="/default-user-image.jpg"' alt='student photo'>
-                <h3 id='detailName'></h3>
+                <h3 id='detailName' class='detailName'></h3>
                 <div class='detailInfo'>
                     <h4 id='detailTitle'></h4>
                     <label id='detailInfoButton' class='btn'>More Info</label>
@@ -55,9 +55,9 @@
             }
 
             const style = document.getElementById("sec-detail").style
-            style.display === 'none'
-            ? style.display = 'block'
-            : style.display = 'none'
+            style.display === 'grid'
+            ? style.display = 'none'
+            : style.display = 'grid'
         }
     </script>
 </body>
