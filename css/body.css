@@ -116,3 +116,7 @@ section {
         display: block;
         /* width: max-content; */
     }
+
+.footer {
+    text-align: center;
+}
