@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/body.css">
+    <link rel="stylesheet" href="/profile.css">
+
+    <title>Thank you</title>
+</head>
+<body>
+        <%- include('header.ejs') %>
+        <section>
+            <h3>Thankyou for submiting</h3>
+            <br/>
+            <p>Here is your submited information</p>
+            <div class='sec-detailContainer' id='sec-detailContainer'>
+                    <div class='imgQuote'>
+                        <img src='<%= nav.images + student.src %>' onerror='this.src="<%= nav.defaultImg %>"' alt='student photo' class='img'>
+                        <div class='name'>
+                            <h1><%= student.firstName %></h1>
+                            <h3><%= student.lastName %></h3>
+                        </div>
+                        <div class='skills'>
+                            <h4><%= student.title %></h4>
+                            |
+                            <% student.skills.forEach(skill => {%>
+                                <%= skill %> |
+                            <%})%>
+                        </div>
+                        <div class='quote'>
+                            <h2 class='quotationMarkOpen'>&#10077;</h2>
+                            <h2 class='quoteText'><%= student.favoriteQuote %></h2>
+                            <h2 class='quotationMarkClose'>&#10080;</h2>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+</body>
+</html>

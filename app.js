@@ -155,7 +155,10 @@ server.post(nav.addStudent, (req,res) => {
     newStudent.alt = newStudent.firstName;
     newStudent.skills =  req.body.skills.split(',');
     data.push(newStudent);
-    res.send('New student added.')
+    res.render('thankyou', {
+        student: newStudent,
+        nav,
+    });
 })
 
 server.listen(port, ()=>{
