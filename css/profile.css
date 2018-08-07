@@ -71,6 +71,10 @@
         
 .infoContainer {
     background: cornsilk;
+    padding: 1em;
+    display: grid;
+    grid-gap: 0.5em;
+    margin-bottom: 1em;
 }
     .infoContainer > *{
         margin: 1em;

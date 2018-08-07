@@ -56,6 +56,8 @@ ul {
 
 section {
     /* margin: 2em 0; */
+}
+section > * {
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -119,4 +121,7 @@ section {
 
 .footer {
     text-align: center;
+    padding: 1em;
+    background: var(--secondarCont);
+    color: var(--primaryMain);
 }
