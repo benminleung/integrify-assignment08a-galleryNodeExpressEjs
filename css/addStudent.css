@@ -1,0 +1,101 @@
+.sec-addStudent {
+    display: grid;
+    grid-template: 
+        '. . .'
+        '. formContainer .'
+        '. . .';
+    /* grid-column-gap: minmax(5vw, 1fr);
+    grid-row-gap: minmax(5vh, 1fr); */
+}
+
+.formContainer{
+    padding: 1em;
+    grid-area: formContainer;
+    display: grid;
+    grid-gap: 1em;
+    grid-auto-rows: auto;
+    grid-template:
+        'formHeader'
+        'formIntro'
+        'firstName'
+        'lastName'
+        'title'
+        'nationality'
+        'skills'
+        'whySofterDeveloper'
+        'longTermVision'
+        'motivatesMe'
+        'favoriteQuote'
+        'joinedOn'
+        'submit'
+    / 1fr;
+}
+
+@media screen and (min-width: 701px){
+    .formContainer{
+        grid-template:
+        'formHeader formHeader'
+        'formIntro formIntro'
+        'firstName lastName'
+        'title nationality'
+        'skills skills'
+        'whySofterDeveloper whySofterDeveloper'
+        'longTermVision longTermVision'
+        'motivatesMe motivatesMe'
+        'favoriteQuote favoriteQuote'
+        'joinedOn .'
+        'submit .'
+        / 1fr 1fr;
+    }
+}
+
+.formHeader {
+    grid-area: formHeader;
+    background: var(--primaryCont);
+    color: var(--primaryMain);
+    text-align: center;
+}
+.formIntro {
+    grid-area: formIntro;
+    text-align: center;
+}
+.firstNameInput {grid-area: firstName;}
+.lastNameInput {grid-area: lastName;}
+.titleInput {grid-area: title;}
+.nationalityInput {grid-area: nationality;}
+.skillsInput {grid-area: skills;}
+.whySofterDeveloperInput {grid-area: whySofterDeveloper;}
+.longTermVisionInput {grid-area: longTermVision;}
+.motivatesMeInput {grid-area: motivatesMe;}
+.favoriteQuoteInput {grid-area: favoriteQuote;}
+.joinedOnInput {grid-area: joinedOn;}
+.submit {grid-area: submit;}
+
+.formContainer div {
+    position: relative;
+    padding-top: 1rem;
+}
+
+.formContainer div label {
+    font-size: small;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.2s ease-out;
+}
+
+.formContainer input {
+    width: 100%;
+    line-height: 2em;
+}
+.formContainer textarea {
+    width: 100%;
+}
+
+.formContainer div input:placeholder-shown + label,
+.formContainer div textarea:placeholder-shown + label {
+    opacity: 0;
+    transform: translateY(1rem);
+}

@@ -9,15 +9,22 @@
     <link rel="stylesheet" href="/body.css">
 </head>
 <body>
-    <%- include('header.html') %>
-    <section>
-        <form action='<%=nav.addStudent%>' method='POST'>
+    <%- include('header.ejs') %>
+    <section class="sec-addStudent">
+        <form action='<%=nav.addStudent%>' method='POST' class='formContainer'>
+            <h3 class='formHeader'>Add New Student</h3>
+            <p class='formIntro'>Fill the form with information of the new student and click submit.</p>
             <% Object.keys(formTemp).forEach((key) => {%>
-                    <label for='<%=key%>'><%= formTemp[key] %></label>
-                    <input type="text" id='<%=key%>' name='<%=key%>'>
-                    <br/>
+                <div class='<%=key%>Input'>
+                    <% if (formTemp[key].type === 'input') {%>
+                        <input type="text" id='<%=key%>' name='<%=key%>' placeholder='<%= formTemp[key].display %>'>
+                    <% }else{%>
+                        <textarea  id='<%=key%>' name='<%=key%>' placeholder='<%= formTemp[key].display %>' cols="30" rows="5"></textarea>                    
+                    <% } %>
+                    <label for='<%=key%>'><%= formTemp[key].display %></label>
+                </div>
             <%});%>
-            <button type='submit'>SUBMIT</button>
+            <button type='submit' class='submit'>SUBMIT</button> 
         </form>
     </section>
 </body>

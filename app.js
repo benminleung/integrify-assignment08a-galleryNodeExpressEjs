@@ -44,16 +44,46 @@ const nav = {
 }
 
 const formTemp = {
-    firstName: 'Firstname',
-    lastName: 'Lastname',
-    title: 'Title',
-    nationality: 'Nationality',
-    skills: 'Skills',
-    whySofterDeveloper: 'Why software development?',
-    longTermVision: 'What is your goal in the long run?',
-    motivatesMe: 'What motivates you?',
-    favoriteQuote: "What's your favorite quote?",
-    joinedOn: 'When did you join Integrify?',
+    firstName: {
+        display: 'Firstname',
+        type: 'input'
+    },
+    lastName: {
+        display: 'Lastname',
+        type: 'input'
+    },
+    title: {
+        display: 'Title',
+        type: 'input'
+    },
+    nationality: {
+        display: 'Nationality',
+        type: 'input'
+    },
+    skills: {
+        display: 'Skills   e.g: Teamwork, JavaScript, SQL',
+        type: 'textarea'
+    },
+    whySofterDeveloper: {
+        display: 'Why software development?',
+        type: 'textarea'
+    },
+    longTermVision: {
+        display: 'What is your goal in the long run?',
+        type: 'textarea'
+    },
+    motivatesMe: {
+        display: 'What motivates you?',
+        type: 'textarea'
+    },
+    favoriteQuote: {
+        display: "What's your favorite quote?",
+        type: 'textarea'
+    },
+    joinedOn: {
+        display: 'When did you join Integrify?',
+        type: 'input'
+    },
 }
 
 function createId (profile){
@@ -123,7 +153,7 @@ server.post(nav.addStudent, (req,res) => {
     newStudent.id = createId(newStudent);
     newStudent.src = '';
     newStudent.alt = newStudent.firstName;
-    newStudent.skills = [req.body.skills];
+    newStudent.skills =  req.body.skills.split(',');
     data.push(newStudent);
     res.send('New student added.')
 })

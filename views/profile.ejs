@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="/body.css">
 </head>
 <body>
-    <%- include('header.html') %>
+    <%- include('header.ejs') %>
     <div class='container'>
         <section class='sec-profile'>
             <div class='sec-detailContainer' id='sec-detailContainer'>
                 <div class='imgQuote'>
-                    <img src='<%= nav.images + student.src %>' onerror='this.src="<%= nav.defaultImg %>"' alt='student photo'>
-                    <div>
+                    <img src='<%= nav.images + student.src %>' onerror='this.src="<%= nav.defaultImg %>"' alt='student photo' class='img'>
+                    <div class='name'>
                         <h1><%= student.firstName %></h1>
                         <h3><%= student.lastName %></h3>
                     </div>
-                    <div>
+                    <div class='skills'>
                         <h4><%= student.title %></h4>
                         |
                         <% student.skills.forEach(skill => {%>

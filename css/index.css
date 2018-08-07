@@ -17,6 +17,7 @@ li {
 }
 
 .sec-detail {
+    z-index: 3;
     /* padding: 10vh 0; */
     position: fixed;
     background: #000000cc;

@@ -1,4 +1,4 @@
-img {
+.sec-detailContainer img {
     height: 20em;
     border-radius: 100em;
 }
@@ -17,17 +17,27 @@ img {
 .imgQuote {
     display: grid;
     grid-template: 0fr 0fr 1fr / 0fr 1fr;
+    grid-template:
+        'img name' 0fr
+        'img skills' 0fr
+        'img quote' 1fr
+        / 0fr 1fr;
     grid-gap: 1em 1em;
     align-items: center;
 }
-    .imgQuote img {
-        grid-row: 1 / -1;
+    .imgQuote .img {
+        grid-area: img;
     }
+
+    .name {grid-area: name;}
+
+    .skills {grid-area: skills;}
 
     .quote {
         display: grid;
         grid-auto-flow: column;
         grid-template-columns: 0.5fr 5fr 0.5fr;
+        grid-area: quote;
     }
         .quoteText {
             text-align: center;        
@@ -42,6 +52,22 @@ img {
             line-height: 0.5em;
             align-self: end;
         }
+
+@media screen and (max-width: 700px){
+    .imgQuote {
+        justify-items: center;
+        grid-template:
+            'name' 0fr
+            'img' 0fr
+            'skills' 0fr
+            'quote' 0fr
+            / 1fr;
+        text-align: center;
+    }
+    .sec-detailContainer{
+        padding: 2vh 2vw;
+    }
+}
         
 .infoContainer {
     background: cornsilk;
@@ -49,3 +75,5 @@ img {
     .infoContainer > *{
         margin: 1em;
     }
+
+
