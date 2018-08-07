@@ -83,8 +83,7 @@ section {
 .header {
     text-align: center;
     background: linear-gradient(90deg, rgb(81, 95, 189) 0%, rgb(255, 70, 118) 52%, rgb(253, 223, 70) 100%);
-    
-    padding: 3vh 3vh;
+    padding: 3vh 3vw;
 }
 @media screen and (max-width: 700px){
     .header{
@@ -94,7 +93,7 @@ section {
     .navBar{
         text-align: center;
         position: sticky;
-        top: 0;
+        top: -1px;
         background: white; 
         padding: 1em;
         z-index: 2;
