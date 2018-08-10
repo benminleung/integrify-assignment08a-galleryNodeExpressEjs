@@ -12,6 +12,8 @@ li {
 
 .studentImg {
     height: 10em;
+    max-width: 7.5em;
+    object-fit: cover;
 }
 .sec-body {
 }
